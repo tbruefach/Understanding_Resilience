@@ -26,8 +26,7 @@ proj1_plot +
   scale_fill_manual(values = c("NH White" = "blue"
                                ,"NH Black" = "red"
                                ,"Hispanic/Latinx" = "green")) +
-  scale_y_continuous(breaks = seq(2.0, 5.0, 0.5),
-                     minor_breaks = seq(2.75, 4.75, .5)) +
+  scale_y_continuous(breaks = seq(3.0, 4.0, 0.25)) +
   labs(title="Resilience Health-Effects Vary by Race/Ethnicity (80% CIs)"
        ,colour = "Sig:") +
   xlab("Resilience (Standardized)") +
@@ -38,8 +37,8 @@ proj1_plot +
         ,legend.text = element_text(size = 12)
         ,plot.title =  element_text(size  = 16
                                     ,hjust = 0.5)
+        ,axis.title = element_text(size = 16)
         ,panel.background = element_rect(fill = 'white')
-        ,strip.text = element_text(size = 12, face = "bold")
         ,axis.text = element_text(size = 12)
         ,axis.ticks.length.x = unit(1.5, 'mm'))
 
