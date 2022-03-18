@@ -15,13 +15,17 @@ proj1_plot <- margins_proj1 %>% group_by(race_eth) %>%
 
 # Plotting Interaction
 proj1_plot + 
-  geom_ribbon(alpha = .3, 
-              aes(color = NULL)) +
+  geom_ribbon(alpha = .2, 
+              aes(color = NULL
+                 ,fill = race_eth)) +
   geom_line(mapping = aes(group = race_eth
                           ,color = sig_slope)
             ,size = 1.5) +
   scale_color_manual(values = c("p < 0.05" = "black"
-                                ,"NS" = "red")) +
+                               ,"NS" = "red")) +
+  scale_fill_manual(values = c("NH White" = "blue"
+                               ,"NH Black" = "red"
+                               ,"Hispanic/Latinx" = "green")) +
   scale_y_continuous(breaks = seq(2.0, 5.0, 0.5),
                      minor_breaks = seq(2.75, 4.75, .5)) +
   labs(title="Resilience Health-Effects Vary by Race/Ethnicity (80% CIs)"
