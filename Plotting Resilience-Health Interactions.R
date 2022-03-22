@@ -27,7 +27,7 @@ proj1_plot +
                                ,"NH Black" = "red"
                                ,"Hispanic/Latinx" = "green")) +
   scale_y_continuous(breaks = seq(3.0, 4.0, 0.25)) +
-  labs(title="Resilience Health-Effects Vary by Race/Ethnicity (80% CIs)"
+  labs(title=""
        ,colour = "Sig:") +
   xlab("Resilience (Standardized)") +
   ylab("Wave 5 Self-Rated Health") +
@@ -40,7 +40,11 @@ proj1_plot +
         ,axis.title = element_text(size = 16)
         ,panel.background = element_rect(fill = 'white')
         ,axis.text = element_text(size = 12)
-        ,axis.ticks.length.x = unit(1.5, 'mm'))
+        ,axis.ticks.length.x = unit(1.5, 'mm')
+        ,strip.text = element_text(size = 12)) +
+  facet_wrap(. ~ race_eth_q
+             ,ncol = 3
+             ,labeller = labeller(race_eth_q = race.labs))
 
 ggsave('disad_proj1.png'
        ,dpi = 1080
