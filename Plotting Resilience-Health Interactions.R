@@ -27,7 +27,7 @@ proj1_plot +
                                ,"NH Black" = "red"
                                ,"Hispanic/Latinx" = "green")) +
   scale_y_continuous(breaks = seq(3.0, 4.0, 0.25)) +
-  labs(title="Resilience Health-Effects Vary by Race/Ethnicity (80% CIs)"
+  labs(title=""
        ,colour = "Sig:") +
   xlab("Resilience (Standardized)") +
   ylab("Wave 5 Self-Rated Health") +
