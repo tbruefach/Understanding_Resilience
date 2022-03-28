@@ -23,15 +23,15 @@ proj1_plot +
             ,size = 1.5) +
   scale_color_manual(values = c("p < 0.05" = "black"
                                ,"NS" = "red")) +
-  scale_fill_manual(values = c("NH White" = "blue"
-                               ,"NH Black" = "red"
-                               ,"Hispanic/Latinx" = "green")) +
+  scale_fill_manual(values = c("NH White" = "skyblue3"
+                               ,"NH Black" = "skyblue3"
+                               ,"Hispanic/Latinx" = "skyblue3")) +
   scale_y_continuous(breaks = seq(3.0, 4.0, 0.25)) +
   labs(title=""
-       ,colour = "Sig:") +
+       ,colour = "Statistical Significance:") +
   xlab("Resilience (Standardized)") +
   ylab("Wave 5 Self-Rated Health") +
-  guides(fill = guide_legend(title = "Race/Ethnicity:")
+  guides(fill = 'none'
          ,colour = guide_legend(override.aes = list(fill = "white"))) +
   theme(legend.position = "bottom"
         ,legend.text = element_text(size = 12)
@@ -41,7 +41,7 @@ proj1_plot +
         ,panel.background = element_rect(fill = 'white')
         ,axis.text = element_text(size = 12)
         ,axis.ticks.length.x = unit(1.5, 'mm')
-        ,strip.text = element_text(size = 12)) +
+        ,strip.text = element_text(size = 12, face = 'bold')) +
   facet_wrap(. ~ race_eth_q
              ,ncol = 3
              ,labeller = labeller(race_eth_q = race.labs))
